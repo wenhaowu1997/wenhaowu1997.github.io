@@ -11459,6 +11459,13 @@ footer {
 .misc-content a{
   text-decoration: none;
   color: #6c757d;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.misc-content a:hover {
+  transform: translateY(-2px);
+  color: #294464 !important;
 }
 
 .section-break{
@@ -11534,5 +11541,167 @@ footer {
     width: 3rem;
     height: 3rem;
     font-size: 1.1rem;
+  }
+}
+
+/* Universal Link Hover Effects - Apply to all content links */
+/* Exclude: navigation links, buttons, social icons, navbar brand, scroll triggers, content link buttons */
+.resume-section-content a:not(.nav-link):not(.social-icon):not(.btn):not(.navbar-brand):not(.js-scroll-trigger):not(.card-title):not(.content-link-btn),
+section a:not(.nav-link):not(.social-icon):not(.btn):not(.navbar-brand):not(.js-scroll-trigger):not(.card-title):not(.content-link-btn) {
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+}
+
+.resume-section-content a:not(.nav-link):not(.social-icon):not(.btn):not(.navbar-brand):not(.js-scroll-trigger):not(.card-title):not(.content-link-btn):hover,
+section a:not(.nav-link):not(.social-icon):not(.btn):not(.navbar-brand):not(.js-scroll-trigger):not(.card-title):not(.content-link-btn):hover {
+  transform: translateY(-2px);
+  color: #32557e !important;
+  text-decoration: underline;
+}
+
+/* Company links with logos - special hover effect */
+.subheading a[href*="http"],
+h3 a[href*="http"] {
+  transition: all 0.3s ease !important;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
+}
+
+.subheading a[href*="http"]:hover,
+h3 a[href*="http"]:hover {
+  transform: translateY(-3px) !important;
+  opacity: 0.9;
+}
+
+.subheading a[href*="http"]:hover img,
+h3 a[href*="http"]:hover img {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* Card title links in misc.html */
+.card-title {
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.card-title:hover {
+  transform: translateY(-3px);
+  color: #294464 !important;
+}
+
+/* Email links */
+a[href^="mailto:"] {
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+a[href^="mailto:"]:hover {
+  transform: translateY(-2px);
+  color: #32557e !important;
+}
+
+/* Touch device support for link hover effects */
+@media (hover: none) and (pointer: coarse) {
+  .resume-section-content a:not(.nav-link):not(.social-icon):not(.btn):not(.navbar-brand):not(.js-scroll-trigger):not(.card-title):not(.content-link-btn):active,
+  section a:not(.nav-link):not(.social-icon):not(.btn):not(.navbar-brand):not(.js-scroll-trigger):not(.card-title):not(.content-link-btn):active {
+    transform: translateY(-1px);
+  }
+  
+  .subheading a[href*="http"]:active,
+  h3 a[href*="http"]:active {
+    transform: translateY(-2px) !important;
+  }
+  
+  .card-title:active {
+    transform: translateY(-2px);
+  }
+  
+  a[href^="mailto:"]:active {
+    transform: translateY(-1px);
+  }
+  
+  .misc-content a:active {
+    transform: translateY(-1px);
+  }
+}
+
+/* Content Link Buttons - Convert all underlined links to buttons */
+.content-link-btn {
+  display: inline-block !important;
+  padding: 0.5rem 1rem;
+  margin: 0.25rem 0.5rem 0.25rem 0;
+  background-color: #294464;
+  color: #fff !important;
+  text-decoration: none !important;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+}
+
+.content-link-btn:hover,
+.content-link-btn:focus {
+  background-color: #32557e !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.content-link-btn:hover *,
+.content-link-btn:focus * {
+  color: #fff !important;
+}
+
+.content-link-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content-link-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.25rem rgba(41, 68, 100, 0.25);
+}
+
+.content-link-btn i {
+  font-size: 0.9rem;
+}
+
+/* Button group spacing */
+.content-link-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.content-link-group .content-link-btn {
+  margin: 0;
+}
+
+/* Responsive adjustments for content link buttons */
+@media (max-width: 768px) {
+  .content-link-btn {
+    font-size: 0.85rem;
+    padding: 0.45rem 0.9rem;
+  }
+  
+  .content-link-group {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  
+  .content-link-group .content-link-btn {
+    width: 100%;
+    text-align: center;
   }
 }
