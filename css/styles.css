@@ -11366,6 +11366,22 @@ p.lead {
     max-width: 10rem;
     max-height: 10rem;
     border: 0.5rem solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  #sideNav .navbar-brand:hover .img-profile,
+  #sideNav .navbar-brand:active .img-profile {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+  
+  /* Touch device support - ensure active state works on mobile */
+  @media (hover: none) and (pointer: coarse) {
+    #sideNav .navbar-brand:active .img-profile {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    }
   }
   #sideNav .navbar-collapse {
     display: flex;
