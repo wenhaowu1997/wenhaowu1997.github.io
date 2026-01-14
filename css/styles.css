@@ -11720,6 +11720,7 @@ a[href^="mailto:"]:hover {
     padding-top: 2rem !important;
     padding-bottom: 2rem !important;
     min-height: auto !important;
+    max-width: 100% !important;
   }
 
   /* 3. Text Wrapping Optimization */
@@ -11763,8 +11764,10 @@ a[href^="mailto:"]:hover {
     font-size: 0.9rem;
     display: flex;
     align-items: center;
-    justify-content: center;
-    white-space: nowrap;
+    justify-content: flex-start;
+    white-space: normal;
+    word-break: break-word;
+    text-align: left;
   }
   
   .content-link-group {
@@ -11831,5 +11834,18 @@ a[href^="mailto:"]:hover {
   .section-break {
     width: 80%;
     margin: 2rem auto;
+  }
+
+  /* Ensure container-fluid uses full width on mobile */
+  .container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* Ensure content doesn't overflow */
+  .resume-section-content {
+    max-width: 100% !important;
+    overflow-x: hidden;
   }
 }
